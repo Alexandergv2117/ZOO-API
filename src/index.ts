@@ -1,8 +1,8 @@
-import express from "express";
-import cors = require("cors");
-import routerAPI from "./routes/index.routes";
+import express from 'express';
+import cors from 'cors';
+import routerAPI from '@routes/index.routes';
 
-const PORT = 3000;
+const PORT = 4000;
 
 const app = express();
 
@@ -13,7 +13,7 @@ app.use(cors());
 routerAPI(app);
 
 app.use((_req, res, next) => {
-  res.status(404).send({ message: "Page not found" });
+  res.status(404).send({ message: 'Page not found' });
   next();
 });
 
