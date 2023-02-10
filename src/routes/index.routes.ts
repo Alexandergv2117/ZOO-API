@@ -1,7 +1,9 @@
-import authRouter from "./auth";
+import authRouter from '@routes/auth';
+import type { Application } from 'express-serve-static-core';
 
-const routerAPI = (app: any) => {
-  app.use("/auth", authRouter);
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+const routerAPI = (app: Application) => {
+  app.use('/auth', authRouter);
 };
 
 export default routerAPI;

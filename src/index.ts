@@ -1,8 +1,11 @@
-import express from "express";
-import cors = require("cors");
-import routerAPI from "./routes/index.routes";
+import express from 'express';
+import cors from 'cors';
+import routerAPI from '@routes/index.routes';
+import * as dotenv from 'dotenv';
 
-const PORT = 3000;
+dotenv.config({ path: './.env' });
+
+const PORT = process.env.PORT;
 
 const app = express();
 
@@ -13,10 +16,10 @@ app.use(cors());
 routerAPI(app);
 
 app.use((_req, res, next) => {
-  res.status(404).send({ message: "Page not found" });
+  res.status(404).send({ message: 'Page not found' });
   next();
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log('Server running on port: ', PORT);
 });
