@@ -4,9 +4,14 @@ import routerAPI from '@routes/index.routes';
 import * as dotenv from 'dotenv';
 
 import sequelize from './database/index';
-import User from './database/models/user';
-import Comment from './database/models/comentario';
-import Calificacion from './database/models/calificacion';
+import User from '@models/user';
+import Comment from '@models/comentario';
+import Calificacion from '@models/calificacion';
+import Animal from '@models/animal';
+import Riesgo from '@models/riesgo';
+import TipoReproduccion from '@models/tipo_reproduccion';
+import Alimentacion from '@models/alimentacion';
+import Especie from '@models/especie';
 
 const createdDB = async (): Promise<void> => {
   await sequelize.sync({ force: true });
@@ -14,9 +19,11 @@ const createdDB = async (): Promise<void> => {
   await User.findAll();
   await Comment.findAll();
 
-  await User.findAll({
-    include: { model: Comment },
-  });
+  await Riesgo.findAll();
+  await TipoReproduccion.findAll();
+  await Alimentacion.findAll();
+  await Especie.findAll();
+  await Animal.findAll();
 };
 
 void createdDB();
