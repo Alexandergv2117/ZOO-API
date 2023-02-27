@@ -4,20 +4,21 @@ module.exports = {
       '@babel/preset-env',
       {
         targets: {
-          node: '16.19.0'
-        }
-      }
+          node: '16.19.0',
+        },
+      },
     ],
-    '@babel/preset-typescript'
+    '@babel/preset-typescript',
   ],
   plugins: [
     [
       'module-resolver',
       {
         alias: {
-          '@routes': './src/routes'
-        }
-      }
-    ]
-  ]
+          '@routes': './src/routes',
+          '@models': './src/database/models',
+        },
+      },
+    ],
+  ],
 };
