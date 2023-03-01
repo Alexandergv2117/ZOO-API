@@ -22,7 +22,6 @@ Riesgo.init(
     descripcion: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: '0',
     },
   },
   {
