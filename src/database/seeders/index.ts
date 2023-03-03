@@ -6,6 +6,7 @@ import User from '../models/user';
 import Comment from '../models/comentario';
 import Calificacion from '../models/calificacion';
 import Animal from '../models/animal';
+import Foto from '../models/foto';
 import Riesgo from '../models/riesgo';
 import TipoReproduccion from '../models/tipo_reproduccion';
 import Alimentacion from '../models/alimentacion';
@@ -28,6 +29,7 @@ import riesgo from './riesgo';
     await Alimentacion.findAll();
     await Especie.findAll();
     await Animal.findAll();
+    await Foto.findAll();
 
     await riesgo.up(sequelize.getQueryInterface());
 
