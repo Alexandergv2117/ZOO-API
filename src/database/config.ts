@@ -8,7 +8,7 @@ const configDB = {
   password: process.env.DB_PASS as string,
   dialect: 'mysql',
   host: process.env.DB_HOST as string,
-  port: process.env.DB_PORT as string,
+  port: process.env.DB_PORT as unknown as number,
 };
 
 export default configDB;
