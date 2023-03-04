@@ -6,11 +6,12 @@ import User from '../models/user';
 import Comment from '../models/comentario';
 import Calificacion from '../models/calificacion';
 import Animal from '../models/animal';
-import Foto from '../models/foto';
+import Imagen from '../models/imagen';
 import Riesgo from '../models/riesgo';
 import TipoReproduccion from '../models/tipo_reproduccion';
 import Alimentacion from '../models/alimentacion';
 import Especie from '../models/especie';
+import Habitat from '../models/habitat';
 
 // SEEDERS
 import riesgo from './riesgo';
@@ -29,11 +30,12 @@ import riesgo from './riesgo';
     await Alimentacion.findAll();
     await Especie.findAll();
     await Animal.findAll();
-    await Foto.findAll();
+    await Imagen.findAll();
+    await Habitat.findAll();
 
     await riesgo.up(sequelize.getQueryInterface());
 
-    console.log('Correcto');
+    console.log('TABLAS CREADAS');
   } catch (e) {
     console.log({ e });
   }

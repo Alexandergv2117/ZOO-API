@@ -5,11 +5,13 @@ import Animal from './animal';
 interface RiesgoAttributes {
   id: number;
   tipo: string;
+  link_foto: string;
 }
 
 class Especie extends Model<RiesgoAttributes> implements RiesgoAttributes {
   public id!: number;
   public tipo!: string;
+  public link_foto!: string;
 }
 
 Especie.init(
@@ -22,7 +24,10 @@ Especie.init(
     tipo: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: '0',
+    },
+    link_foto: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {

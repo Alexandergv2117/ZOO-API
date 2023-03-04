@@ -2,24 +2,24 @@ import { Model, DataTypes } from 'sequelize';
 import sequelize from '../index';
 import Animal from './animal';
 
-interface fotoAttributes {
+interface RiesgoAttributes {
   id: number;
-  link: string;
+  descripcion: string;
 }
 
-class Foto extends Model<fotoAttributes> implements fotoAttributes {
+class Habitat extends Model<RiesgoAttributes> implements RiesgoAttributes {
   public id!: number;
-  public link!: string;
+  public descripcion!: string;
 }
 
-Foto.init(
+Habitat.init(
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    link: {
+    descripcion: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -27,19 +27,19 @@ Foto.init(
   {
     sequelize,
     timestamps: false,
-    modelName: 'Foto',
-    tableName: 'foto',
+    modelName: 'Habitat',
+    tableName: 'habitat',
   }
 );
 
-Animal.hasMany(Foto, {
-  foreignKey: 'animal_id',
+Habitat.hasMany(Animal, {
+  foreignKey: 'especie_id',
   sourceKey: 'id',
 });
 
-Foto.belongsTo(Animal, {
-  foreignKey: 'animal_id',
+Animal.belongsTo(Habitat, {
+  foreignKey: 'especie_id',
   targetKey: 'id',
 });
 
-export default Foto;
+export default Habitat;
