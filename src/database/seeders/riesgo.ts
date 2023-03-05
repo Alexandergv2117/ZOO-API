@@ -4,13 +4,13 @@ export default {
   up: async (queryInterface: QueryInterface) => {
     await queryInterface.bulkInsert('riesgo', [
       {
-        descripcion: 'bajo',
+        nivel: 'bajo',
       },
       {
-        descripcion: 'medio',
+        nivel: 'medio',
       },
       {
-        descripcion: 'alto',
+        nivel: 'alto',
       },
     ]);
   },

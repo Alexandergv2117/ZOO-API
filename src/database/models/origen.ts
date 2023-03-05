@@ -2,44 +2,45 @@ import { Model, DataTypes } from 'sequelize';
 import sequelize from '../index';
 import Animal from './animal';
 
-interface RiesgoAttributes {
+interface OrigenAttributes {
   id: number;
-  habitat: string;
+  origen: string;
 }
 
-class Habitat extends Model<RiesgoAttributes> implements RiesgoAttributes {
+class Origen extends Model<OrigenAttributes> implements OrigenAttributes {
   public id!: number;
-  public habitat!: string;
+  public origen!: string;
 }
 
-Habitat.init(
+Origen.init(
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    habitat: {
+    origen: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: '0',
     },
   },
   {
     sequelize,
     timestamps: false,
-    modelName: 'Habitat',
-    tableName: 'habitat',
+    modelName: 'Origen',
+    tableName: 'origen',
   }
 );
 
-Habitat.hasMany(Animal, {
-  foreignKey: 'especie_id',
+Origen.hasMany(Animal, {
+  foreignKey: 'origen_id',
   sourceKey: 'id',
 });
 
-Animal.belongsTo(Habitat, {
-  foreignKey: 'especie_id',
+Animal.belongsTo(Origen, {
+  foreignKey: 'origen_id',
   targetKey: 'id',
 });
 
-export default Habitat;
+export default Origen;
