@@ -2,20 +2,17 @@ import { Model, DataTypes } from 'sequelize';
 import sequelize from '../index';
 import Animal from './animal';
 
-interface AlimentacionAttributes {
+interface OrigenAttributes {
   id: number;
   descripcion: string;
 }
 
-class Alimentacion
-  extends Model<AlimentacionAttributes>
-  implements AlimentacionAttributes
-{
+class Origen extends Model<OrigenAttributes> implements OrigenAttributes {
   public id!: number;
   public descripcion!: string;
 }
 
-Alimentacion.init(
+Origen.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -31,19 +28,19 @@ Alimentacion.init(
   {
     sequelize,
     timestamps: false,
-    modelName: 'Alimentacion',
-    tableName: 'alimentacion',
+    modelName: 'Origen',
+    tableName: 'origen',
   }
 );
 
-Alimentacion.hasMany(Animal, {
-  foreignKey: 'alimentacion_id',
+Origen.hasMany(Animal, {
+  foreignKey: 'origen_id',
   sourceKey: 'id',
 });
 
-Animal.belongsTo(Alimentacion, {
-  foreignKey: 'alimentacion_id',
+Animal.belongsTo(Origen, {
+  foreignKey: 'origen_id',
   targetKey: 'id',
 });
 
-export default Alimentacion;
+export default Origen;
