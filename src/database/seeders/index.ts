@@ -15,6 +15,7 @@ import Habitat from '../models/habitat';
 
 // SEEDERS
 import riesgo from './riesgo';
+import especie from './especie';
 
 (async () => {
   try {
@@ -34,6 +35,7 @@ import riesgo from './riesgo';
     await Habitat.findAll();
 
     await riesgo.up(sequelize.getQueryInterface());
+    await especie.up(sequelize.getQueryInterface());
 
     console.log('TABLAS CREADAS');
   } catch (e) {
