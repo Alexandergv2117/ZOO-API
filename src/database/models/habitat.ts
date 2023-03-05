@@ -2,15 +2,14 @@ import { Model, DataTypes } from 'sequelize';
 import sequelize from '../index';
 import Animal from './animal';
 
-interface RiesgoAttributes {
+interface HabitatAttributes {
   id: number;
-  descripcion: string;
+  habitat: string;
 }
 
-class Habitat extends Model<RiesgoAttributes> implements RiesgoAttributes {
+class Habitat extends Model<HabitatAttributes> implements HabitatAttributes {
   public id!: number;
-  public descripcion!: string;
-}
+  public habitat!: string;
 
 Habitat.init(
   {
@@ -19,7 +18,7 @@ Habitat.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    descripcion: {
+    habitat: {
       type: DataTypes.STRING,
       allowNull: false,
     },

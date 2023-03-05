@@ -2,14 +2,17 @@ import { Model, DataTypes } from 'sequelize';
 import sequelize from '../index';
 import Animal from './animal';
 
-interface RiesgoAttributes {
+interface AlimentacionAttributes {
   id: number;
-  descripcion: string;
+  alimentacion: string;
 }
 
-class Alimentacion extends Model<RiesgoAttributes> implements RiesgoAttributes {
+class Alimentacion
+  extends Model<AlimentacionAttributes>
+  implements AlimentacionAttributes
+{
   public id!: number;
-  public descripcion!: string;
+  public alimentacion!: string;
 }
 
 Alimentacion.init(
@@ -19,7 +22,7 @@ Alimentacion.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    descripcion: {
+    alimentacion: {
       type: DataTypes.STRING,
       allowNull: false,
       defaultValue: '0',
