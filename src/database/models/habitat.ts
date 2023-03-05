@@ -10,7 +10,6 @@ interface HabitatAttributes {
 class Habitat extends Model<HabitatAttributes> implements HabitatAttributes {
   public id!: number;
   public habitat!: string;
-}
 
 Habitat.init(
   {
