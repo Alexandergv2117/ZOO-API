@@ -4,19 +4,19 @@ export default {
   up: async (queryInterface: QueryInterface) => {
     await queryInterface.bulkInsert('origen', [
       {
-        descripcion: 'Especie endémica ',
+        origen: 'Especie endémica ',
       },
       {
-        descripcion: 'Especie no endémica',
+        origen: 'Especie no endémica',
       },
       {
-        descripcion: 'Especie introducida',
+        origen: 'Especie introducida',
       },
       {
-        descripcion: 'Especie invasora',
+        origen: 'Especie invasora',
       },
       {
-        descripcion: 'Especie migratoria',
+        origen: 'Especie migratoria',
       },
     ]);
   },

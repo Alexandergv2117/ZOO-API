@@ -4,13 +4,13 @@ export default {
   up: async (queryInterface: QueryInterface) => {
     await queryInterface.bulkInsert('alimentacion', [
       {
-        descripcion: 'Carnívoros ',
+        alimentacion: 'Carnívoros ',
       },
       {
-        descripcion: 'Herbívoros  ',
+        alimentacion: 'Herbívoros  ',
       },
       {
-        descripcion: 'Omnívoros  ',
+        alimentacion: 'Omnívoros  ',
       },
     ]);
   },

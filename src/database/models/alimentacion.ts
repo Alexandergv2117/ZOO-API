@@ -4,7 +4,7 @@ import Animal from './animal';
 
 interface AlimentacionAttributes {
   id: number;
-  descripcion: string;
+  alimentacion: string;
 }
 
 class Alimentacion
@@ -12,7 +12,7 @@ class Alimentacion
   implements AlimentacionAttributes
 {
   public id!: number;
-  public descripcion!: string;
+  public alimentacion!: string;
 }
 
 Alimentacion.init(
@@ -22,7 +22,7 @@ Alimentacion.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    descripcion: {
+    alimentacion: {
       type: DataTypes.STRING,
       allowNull: false,
       defaultValue: '0',

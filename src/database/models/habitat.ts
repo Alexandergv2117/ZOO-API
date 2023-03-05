@@ -4,12 +4,12 @@ import Animal from './animal';
 
 interface RiesgoAttributes {
   id: number;
-  descripcion: string;
+  habitat: string;
 }
 
 class Habitat extends Model<RiesgoAttributes> implements RiesgoAttributes {
   public id!: number;
-  public descripcion!: string;
+  public habitat!: string;
 }
 
 Habitat.init(
@@ -19,7 +19,7 @@ Habitat.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    descripcion: {
+    habitat: {
       type: DataTypes.STRING,
       allowNull: false,
     },

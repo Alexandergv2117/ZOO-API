@@ -4,12 +4,12 @@ import Animal from './animal';
 
 interface RiesgoAttributes {
   id: number;
-  descripcion: string;
+  nivel: string;
 }
 
 class Riesgo extends Model<RiesgoAttributes> implements RiesgoAttributes {
   public id!: number;
-  public descripcion!: string;
+  public nivel!: string;
 }
 
 Riesgo.init(
@@ -19,7 +19,7 @@ Riesgo.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    descripcion: {
+    nivel: {
       type: DataTypes.STRING,
       allowNull: false,
     },

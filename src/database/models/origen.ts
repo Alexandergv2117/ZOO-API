@@ -4,12 +4,12 @@ import Animal from './animal';
 
 interface OrigenAttributes {
   id: number;
-  descripcion: string;
+  origen: string;
 }
 
 class Origen extends Model<OrigenAttributes> implements OrigenAttributes {
   public id!: number;
-  public descripcion!: string;
+  public origen!: string;
 }
 
 Origen.init(
@@ -19,7 +19,7 @@ Origen.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    descripcion: {
+    origen: {
       type: DataTypes.STRING,
       allowNull: false,
       defaultValue: '0',
