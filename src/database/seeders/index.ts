@@ -13,6 +13,7 @@ import Alimentacion from '../models/alimentacion';
 import Especie from '../models/especie';
 import Habitat from '../models/habitat';
 import Origen from '../models/origen';
+import Autor from '../models/autor';
 
 // SEEDERS
 import riesgo from './riesgo';
@@ -38,6 +39,7 @@ import origen from './origen';
     await Imagen.findAll();
     await Habitat.findAll();
     await Origen.findAll();
+    await Autor.findAll();
 
     await riesgo.up(sequelize.getQueryInterface());
     await especie.up(sequelize.getQueryInterface());

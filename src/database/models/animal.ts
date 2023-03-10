@@ -8,7 +8,9 @@ interface AnimalAttributes {
   tamanio: string;
   descripcion: string;
   link_video: string;
-  lint_map: string;
+  link_map: string;
+  link_audio: string;
+  link_gif: string;
 }
 
 class Animal extends Model<AnimalAttributes> implements AnimalAttributes {
@@ -18,7 +20,9 @@ class Animal extends Model<AnimalAttributes> implements AnimalAttributes {
   public tamanio!: string;
   public descripcion!: string;
   public link_video!: string;
-  public lint_map!: string;
+  public link_map!: string;
+  public link_audio!: string;
+  public link_gif!: string;
 }
 
 Animal.init(
@@ -48,7 +52,15 @@ Animal.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    lint_map: {
+    link_map: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    link_audio: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    link_gif: {
       type: DataTypes.STRING,
       allowNull: false,
     },

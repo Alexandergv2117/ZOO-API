@@ -2,12 +2,12 @@ import { Model, DataTypes } from 'sequelize';
 import sequelize from '../index';
 import Animal from './animal';
 
-interface RiesgoAttributes {
+interface HabitatAttributes {
   id: number;
   habitat: string;
 }
 
-class Habitat extends Model<RiesgoAttributes> implements RiesgoAttributes {
+class Habitat extends Model<HabitatAttributes> implements HabitatAttributes {
   public id!: number;
   public habitat!: string;
 }
@@ -33,12 +33,12 @@ Habitat.init(
 );
 
 Habitat.hasMany(Animal, {
-  foreignKey: 'especie_id',
+  foreignKey: 'habitat_id',
   sourceKey: 'id',
 });
 
 Animal.belongsTo(Habitat, {
-  foreignKey: 'especie_id',
+  foreignKey: 'habitat_id',
   targetKey: 'id',
 });
 
