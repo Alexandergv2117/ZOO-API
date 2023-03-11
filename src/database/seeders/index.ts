@@ -13,9 +13,14 @@ import Alimentacion from '../models/alimentacion';
 import Especie from '../models/especie';
 import Habitat from '../models/habitat';
 import Origen from '../models/origen';
+import Autor from '../models/autor';
 
 // SEEDERS
 import riesgo from './riesgo';
+import especie from './especie';
+import tipo_reproduccion from './tipo_reproduccion';
+import alimentacion from './alimentacion';
+import origen from './origen';
 
 (async () => {
   try {
@@ -34,8 +39,13 @@ import riesgo from './riesgo';
     await Imagen.findAll();
     await Habitat.findAll();
     await Origen.findAll();
+    await Autor.findAll();
 
     await riesgo.up(sequelize.getQueryInterface());
+    await especie.up(sequelize.getQueryInterface());
+    await tipo_reproduccion.up(sequelize.getQueryInterface());
+    await alimentacion.up(sequelize.getQueryInterface());
+    await origen.up(sequelize.getQueryInterface());
 
     console.log('TABLAS CREADAS');
   } catch (e) {

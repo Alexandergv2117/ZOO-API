@@ -10,6 +10,7 @@ interface HabitatAttributes {
 class Habitat extends Model<HabitatAttributes> implements HabitatAttributes {
   public id!: number;
   public habitat!: string;
+}
 
 Habitat.init(
   {
@@ -32,12 +33,12 @@ Habitat.init(
 );
 
 Habitat.hasMany(Animal, {
-  foreignKey: 'especie_id',
+  foreignKey: 'habitat_id',
   sourceKey: 'id',
 });
 
 Animal.belongsTo(Habitat, {
-  foreignKey: 'especie_id',
+  foreignKey: 'habitat_id',
   targetKey: 'id',
 });
 
